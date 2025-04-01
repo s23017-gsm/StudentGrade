@@ -1,31 +1,38 @@
 package school;
 
-import javax.security.auth.Subject;
 import java.util.ArrayList;
 
 public class Student {
-    private int StudentId;
-    private String StudentName;
-    private Subject majorSubject;
+    private int studentId;  // 학번
+    private String studentName; // 이름
+    private Subject majorSubject; // 필수 과목
 
     private ArrayList<Score> scoreList = new ArrayList<Score>();
 
     public Student(int studentId, String studentName, Subject majorSubject) {
-        this.StudentId = studentId;
-        this.StudentName = studentName;
+        this.studentId = studentId;
+        this.studentName = studentName;
         this.majorSubject = majorSubject;
     }
 
-    public void addSubject(Score score) {
+    public void addSubjectScore(Score score) {
         scoreList.add(score);
     }
 
     public int getStudentId() {
-        return StudentId;
+        return studentId;
     }
 
     public void setStudentId(int studentId) {
-        this.StudentId = studentId;
+        this.studentId = studentId;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
     public Subject getMajorSubject() {
